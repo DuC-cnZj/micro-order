@@ -8,9 +8,6 @@ on:
 
 jobs:
   build:
-    env: 
-      SSH_KEY: ${{ secrets.SSH_KEY }}
-      SSH_KEY_PUB: ${{ secrets.SSH_KEY_PUB }}
     name: Build
     runs-on: ubuntu-18.04
     steps:
@@ -44,18 +41,14 @@ jobs:
 
     - name: add ssh
       run: |
-        mkdir ~/.ssh
-        echo $SSH_KEY > ~/.ssh/id_rsa
-        echo $SSH_KEY_PUB > ~/.ssh/id_rsa.pub
-        ssh -T git@github.com
 
     - name: upload proto
       run: |
         cd protos
         git init
-        git remote add origin https://github.com/DuC-cnZj/order_protos.git
         git config --local user.name "duc"
         git config --local user.email "1025434218@qq.com"
+        git remote set-url --push origin https://DuC-cnZj:${{ secrets.GITHUB_TOKEN }}@github.com/DuC-cnZj/order_protos.git
         git add .
         git commit -m "commit protos"
         git push -u master
