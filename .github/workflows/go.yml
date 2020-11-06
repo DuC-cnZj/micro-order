@@ -7,8 +7,9 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:
+    env: 
+      SSH_KEY: ${{ secrets.SSH_KEY }}
     name: Build
     runs-on: ubuntu-18.04
     steps:
