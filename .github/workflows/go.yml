@@ -23,7 +23,7 @@ jobs:
 
     - name: Get dependencies
       run: |
-        apt install -y protobuf-compiler
+        apt-ge install -y protobuf-compiler
         protoc --version
 
     - name: Get dependencies
