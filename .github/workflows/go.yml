@@ -46,6 +46,7 @@ jobs:
         cd /tmp
         git clone https://DuC-cnZj:${{ secrets.TOKEN }}@github.com/DuC-cnZj/order_protos.git repo
         cd repo
+        if [ ! -f "go.mod" ]; then go mod init github.com/DuC-cnZj/order_protos;fi
         mv $MYPATH/* /tmp/repo/
         echo $GITHUB_SHA > sha.txt
         git config --local user.name "duc"
