@@ -28,5 +28,6 @@ jobs:
 
     - name: build
       run: |
+        go install github.com/golang/protobuf/protoc-gen-go
         cd protos
         bash gen.sh
