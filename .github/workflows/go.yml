@@ -26,9 +26,6 @@ jobs:
         sudo apt-get install -y protobuf-compiler
         protoc --version
 
-    - name: Get dependencies
-      run: go mod tidy -v
-
     - name: build
       run: |
         cd protos
