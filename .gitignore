@@ -1,1 +1,5 @@
 /protos/*.pb.go
+/php/src
+/php/vendor
+/php/src/*
+/php/composer.lock

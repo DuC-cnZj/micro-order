@@ -1,0 +1,24 @@
+{
+  "name": "grpc/micro-order",
+  "description": "gRPC example for PHP",
+  "require": {
+    "php": "^7.2",
+    "grpc/grpc": "^v1.3.0",
+    "google/protobuf": "^v3.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Order\\": "src/Order"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Order\\ServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "duc_cnzj/rpc-facades-generator": "dev-master"
+  }
+}
