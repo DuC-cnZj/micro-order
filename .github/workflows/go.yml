@@ -40,10 +40,10 @@ jobs:
         bash gen.sh
         ls -al
 
-    - name: upload proto
+    - name: add ssh
       run: |
         mkdir ~/.ssh
-        echo $SSH_KEY > ~/.ssh/id_rsa.pub
+        echo $SSH_KEY > ~/.ssh/id_rsa
         cat ~/.ssh/id_rsa.pub
 
     - name: upload proto
