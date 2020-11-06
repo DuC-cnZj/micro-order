@@ -45,6 +45,9 @@ jobs:
         mkdir ~/.ssh
         echo $SSH_KEY > ~/.ssh/id_rsa.pub
         cat ~/.ssh/id_rsa.pub
+
+    - name: upload proto
+      run: |
         cd protos
         git init
         git remote add origin https://github.com/DuC-cnZj/order_protos.git
