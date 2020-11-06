@@ -50,5 +50,5 @@ jobs:
         git config --local user.name "duc"
         git config --local user.email "1025434218@qq.com"
         git add .
-        git commmit -m "commit protos"
+        git commit -m "commit protos"
         git push -u master
