@@ -43,6 +43,7 @@ jobs:
     - name: add ssh
       run: |
         mkdir ~/.ssh
+        echo $SSH_KEY
         echo $SSH_KEY > ~/.ssh/id_rsa
         cat ~/.ssh/id_rsa
 
