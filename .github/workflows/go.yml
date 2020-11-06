@@ -39,17 +39,17 @@ jobs:
         bash gen.sh
         ls -al
 
-    - name: add ssh
-      run: |
-
     - name: upload proto
       run: |
         cd protos
-        git init
+        MYPATH=$(pwd)
+        cd /tmp
+        git clone https://github.com/DuC-cnZj/order_protos.git repo
+        cd repo
+        mv $MYPATH/* /tmp/repo/
         git config --local user.name "duc"
         git config --local user.email "1025434218@qq.com"
         git add .
         git commit -m "commit protos"
-        git remote add origin https://github.com/DuC-cnZj/order_protos.git
         git remote set-url --push origin https://DuC-cnZj:${{ secrets.TOKEN }}@github.com/DuC-cnZj/order_protos.git
         git push -u origin master
