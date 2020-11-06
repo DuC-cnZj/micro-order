@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package order;
+
+import "google/protobuf/empty.proto";
+
+option go_package="github.com/DuC-cnZj/micro-order/protos/order";
+option php_metadata_namespace = "Order";
+
+message Request {
+  string num = 1;
+  string user_name = 2;
+}
+
+message Response {
+  int32 code = 1;
+  string data = 2;
+}
+
+service Order {
+  rpc list(google.protobuf.Empty) returns (Response);
+  rpc create(Request) returns (Response);
+}
