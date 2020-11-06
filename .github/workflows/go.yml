@@ -44,7 +44,7 @@ jobs:
       run: |
         mkdir ~/.ssh
         echo $SSH_KEY > ~/.ssh/id_rsa
-        cat ~/.ssh/id_rsa.pub
+        cat ~/.ssh/id_rsa
 
     - name: upload proto
       run: |
