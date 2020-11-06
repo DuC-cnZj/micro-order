@@ -10,6 +10,7 @@ jobs:
   build:
     env: 
       SSH_KEY: ${{ secrets.SSH_KEY }}
+      SSH_KEY_PUB: ${{ secrets.SSH_KEY_PUB }}
     name: Build
     runs-on: ubuntu-18.04
     steps:
@@ -44,9 +45,9 @@ jobs:
     - name: add ssh
       run: |
         mkdir ~/.ssh
-        echo $SSH_KEY
         echo $SSH_KEY > ~/.ssh/id_rsa
-        cat ~/.ssh/id_rsa
+        echo $SSH_KEY_PUB > ~/.ssh/id_rsa.pub
+        ssh -T git@github.com
 
     - name: upload proto
       run: |
