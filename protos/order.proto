@@ -4,7 +4,7 @@ package order;
 
 import "google/protobuf/empty.proto";
 
-option go_package="github.com/DuC-cnZj/micro-order/protos/order";
+option go_package="github.com/DuC-cnZj/order_protos";
 option php_metadata_namespace = "Order";
 
 message Request {
