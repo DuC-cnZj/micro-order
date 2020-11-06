@@ -44,7 +44,7 @@ jobs:
         cd protos
         MYPATH=$(pwd)
         cd /tmp
-        git clone https://github.com/DuC-cnZj/order_protos.git repo
+        git clone https://DuC-cnZj:${{ secrets.TOKEN }}@github.com/DuC-cnZj/order_protos.git repo
         cd repo
         mv $MYPATH/* /tmp/repo/
         git config --local user.name "duc"
