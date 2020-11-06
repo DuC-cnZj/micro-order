@@ -48,8 +48,7 @@ jobs:
         git init
         git config --local user.name "duc"
         git config --local user.email "1025434218@qq.com"
-        git remote set-url --push origin https://DuC-cnZj:${{ secrets.TOKEN }}@github.com/DuC-cnZj/order_protos.git
-        git remote add origin https://github.com/DuC-cnZj/order_protos.git
         git add .
         git commit -m "commit protos"
+        git remote set-url --push origin https://DuC-cnZj:${{ secrets.TOKEN }}@github.com/DuC-cnZj/order_protos.git
         git push -u master
