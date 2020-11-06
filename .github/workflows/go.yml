@@ -23,7 +23,7 @@ jobs:
 
     - name: Get dependencies
       run: |
-        apt-get install -y git
+        sudo apt-get install -y git
         curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip
         sudo apt-get install unzip
         unzip protoc-3.13.0-linux-x86_64.zip -d $HOME/.local
@@ -46,4 +46,9 @@ jobs:
         echo $SSH_KEY > ~/.ssh/id_rsa.pub
         cd protos
         git init
-        git remote add
+        git remote add origin https://github.com/DuC-cnZj/order_protos.git
+        git config --local user.name "duc"
+        git config --local user.email "1025434218@qq.com"
+        git add .
+        git commmit -m "commit protos"
+        git push -u master
